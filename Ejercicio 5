@@ -1,0 +1,25 @@
+Ejercicio 5: Corregir la Función Se proporciona la siguiente función que intenta sumar 5 a un número, pero devuelve un resultado incorrecto. 
+Debe identificar el error y corregir la función: 
+int addFive(int num) { 
+num + 5; 
+return num;
+}
+
+Código:
+
+#include <iostream>
+using namespace std;
+int addFive(int num){
+  num = num + 5;
+  return num;
+}
+int main(){
+  int valorUsuario;
+  cout << "Ingresa un numero para sumarle 5: ";
+  cin >> valorUsuario;
+  int resultado = addFive(valorUsuario);
+  cout << "El numero ingresado fue: " << valorUsuario << endl;
+  cout << "El resultado final (n + 5) es: " << resultado << endl;
+
+  return 0;
+}
