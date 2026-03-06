@@ -1,0 +1,37 @@
+Ejercicio 4: Invertir Parte de una Cadena Dada una cadena y dos índices a y b, invertir la parte del texto entre esas posiciones inclusive. Si b es mayor que la longitud de la cadena, usar el último índice válido.
+
+Código:
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+void invertirSegmento(char cadena[], int a, int b) {
+    int n = strlen(cadena);
+    if (b >= n) {
+        b = n - 1;
+    }
+    if (a < 0 || a >= n || b < 0 || a > b) {
+        cout << "Índices inválidos." << endl;
+        return;
+    }while (a < b) {
+        char temp = cadena[a];
+        cadena[a] = cadena[b];
+        cadena[b] = temp;
+        a++;
+        b--;
+    }
+}
+int main() {
+    char texto[100];
+    int a, b;
+    cout << "Ingrese una cadena: ";
+    cin.getline(texto, 100);
+    cout << "Ingrese índice inicial (a): ";
+    cin >> a;
+    cout << "Ingrese índice final (b): ";
+    cin >> b;
+    invertirSegmento(texto, a, b);
+    cout << "Resultado: " << texto << endl;
+
+    return 0;
+}
