@@ -1,0 +1,28 @@
+Ejercicio 1: Convertir Binario a Decimal Crear un programa que reciba un número binario como texto (string) y lo convierta a decimal utilizando bucles y condicionales. Ejemplo: 1011 → 11.
+
+Código:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+  string binario; 
+  int decimal = 0;
+  int multiplicador = 1;
+  cout << "Hola! Por favor ingresa un numero binario (solo 0 y 1): ";
+  cin >> binario;
+  for (int i = binario.length() - 1; i >= 0; i--) {
+    if (binario[i] == '1'){
+      decimal = decimal + multiplicador;
+    }
+    else if (binario[i] == '0'){
+    }else{
+      cout << "Error: Ingresaste un caracter que no es ni 0 ni 1." << endl;
+      return 1;
+    }
+    multiplicador = multiplicador * 2;
+  } 
+cout << "El numero binario " << binario << " en decimal es: " << decimal << endl;
+  return 0;
+}
