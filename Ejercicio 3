@@ -1,0 +1,25 @@
+Ejercicio 3: Inverso Aditivo Solicitar una cantidad de números, almacenarlos en un arreglo y generar otro arreglo con el inverso aditivo de cada número. Ejemplo: [1, -2, 3] → [-1, 2, -3]. Debe utilizar arreglos.
+
+Código:
+
+#include <iostream>
+using namespace std;
+
+int main(){
+  int cantidad;
+  cout << "Cuantos numeros deseas ingresar?: ";
+  cin >> cantidad;
+  int originales[cantidad];
+  int inversos[cantidad];
+  for (int i = 0; i < cantidad; i++){
+    cout << "Ingresa el numero " << i + 1 << ": ";
+    cin >> originales[i];
+    inversos[i] = originales[i] * -1;
+  }
+  cout << "Inverso aditivo: [";
+  for (int i = 0; i < cantidad; i++){
+    cout << inversos[i] << (i == cantidad - 1 ? "" : ", ");
+  }
+  cout << "]" << endl;
+  return 0;
+}
